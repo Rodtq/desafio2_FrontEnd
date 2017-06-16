@@ -1,0 +1,14 @@
+/* app css stylesheet */
+.gerenciamento-sec{
+    padding-left: 20px;
+}
+.title-register-edit{
+    padding-bottom: 20px;
+    text-decoration: underline;
+}
+.credentials{
+    width:80%!important;
+    margin-left:10%;
+    margin-bottom:5px;
+
+}

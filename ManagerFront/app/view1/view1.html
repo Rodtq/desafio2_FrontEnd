@@ -1,0 +1,117 @@
+<section id="gerenciamento-sec" class="gerenciamento-sec">
+    <div data-ng-controller="View1Ctrl" data-ng-init="init()">
+        <div id="comandos" class="container">
+            <div class="row title-register-edit">
+                <h3>Gerenciamento de máquinas</h3>
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-sm-8">
+                        <button type="button" class="btn btn-default" ng-click="manualRefresh()">Atualizar manualmente</button>
+                    </div>
+                    <label class="col-sm-4 control-label">Atualização automática em
+                        <timer interval="1000" countdown="countdownVal" finish-callback="callbackTimer()" >{{countdown}}</timer> segundos</label>
+                </div>    
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Id:
+                        </th>
+                        <th>
+                            Nome:
+                        </th>
+                        <th>
+                            Número serial:
+                        </th>
+                        <th>
+                            Modelo:
+                        </th>
+                        <th>
+                            Processador:
+                        </th>
+                        <th>
+                            Memória:
+                        </th>
+                        <th>
+                            Hd:
+                        </th>
+                        <th>
+                            Temperatura:
+                        </th>
+                        <th>
+                            Status:
+                        </th>
+                        <th>
+                            Disponibilidade:
+                        </th>
+                        <th>
+                            Endereço
+                        </th>
+                        <th>
+                            Ações:
+                        </th>
+                    </tr> 
+                </thead>
+                <tbody class="table-hover">
+                    <tr ng-repeat="item in machineList">
+                        <td> 
+                            {{item.id}}
+                        </td>
+                        <td>
+                            {{item.name}}
+                        </td>
+                        <td>
+                            {{item.serialNumber}}
+                        </td>
+                        <td>
+                            {{item.model}}
+                        </td>
+                        <td>
+                            {{item.processor}}
+                        </td>
+                        <td>
+                            {{item.memory}}
+                        </td>
+                        <td>
+                            {{item.hd}}
+                        </td>
+                        <td>
+                            {{item.temperature}}
+                        </td>
+                        <td>
+                            {{item.powerStatus === 0?"OFF":"ON"}}
+                        </td>
+                        <td>
+                            {{item.machineStatus === 0?"Disponível":"Indisponível" }}
+                        </td>
+                        <td>
+                            {{item.address}}
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <!-- Single button -->
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="glyphicon glyphicon-wrench"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a ng-click="togglePower(item.id, item.powerStatus)" >Ligar/Desligar </a></li>
+                                        <li><a ng-click="disconnect(item.address)">Desconectar</a></li>
+                                        <li><a ng-click="remove(item.id)">Excluir</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><input type="text" class="credentials form-control " id="user" placeholder="user." ng-model="credentials.user"></li>
+                                        <li><input type="text" class="form-control credentials" id="password" placeholder="password." ng-model="credentials.password"></li>
+                                        <li><a ng-click="connect(item.address)" >Conectar</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
