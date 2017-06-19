@@ -13,6 +13,7 @@ npm install -g bower
 bower install
 npm install
 1.4 se for de sua preferência poderá rodá-lo no ambiente de desenvolvimento para isso será necessário instalar uma IDE como Netbeans. 1.5 ao instalar e configurar a IDE você deverá baixar o projeto do github e abrí-lo em sua Ide 1.6 após ter aberto o projeto será necessário clicar com o mous e com o botão direito e clicar em npm install e bower install para as dependencias do projeto serem baixadas e instaladas
+1.5 mover a pasta bower_components para dentro da pasta app 
 
 Conclusão:
 Esta interface foi criada para que seja possível a intereção com o backend, o Gerenciador, o gerenciador, por sua vez tem sua própia interface rest para se comunicar com o simulador obtendo a seguinte configuração:
